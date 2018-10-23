@@ -35,6 +35,18 @@ RSpec.describe ActiveRecord::Arrangeable do
                                                  Province.create(name: 'b2')])
         end
 
+        context 'with nil' do
+          it 'sorts by default' do
+            expect(subject.arrange(nil).map(&:id)).to eq(subject_sort_by.map(&:id))
+          end
+        end
+
+        context 'with empty hash' do
+          it 'sorts by default' do
+            expect(subject.arrange({}).map(&:id)).to eq(subject_sort_by.map(&:id))
+          end
+        end
+
         context 'with symbol' do
           it 'sorts ascending by default' do
             expect(subject.arrange(:province_name).map(&:id)).to eq(sorted_cities.map(&:id))

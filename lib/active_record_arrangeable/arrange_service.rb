@@ -33,6 +33,7 @@ module ActiveRecord
       private
 
       def apply_arrange(field, direction)
+        return if field.nil? || field.empty?
         method_name  = "arrange_with_#{field}"
 
         @relation = if @relation.respond_to?(method_name)
