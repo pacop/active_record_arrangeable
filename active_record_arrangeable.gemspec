@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Friendly and easy sort'
   spec.homepage      = ''
   spec.license       = 'MIT'
+  spec.metadata      = {'source_code_uri' => 'https://github.com/pacop/active_record_arrangeable'}
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -21,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.5'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'sqlite3'
-  spec.add_dependency 'activerecord', ['>= 3.0', '<= 5.2']
+  spec.add_dependency 'activerecord', ['>= 3.0', '< 5.3']
 end
